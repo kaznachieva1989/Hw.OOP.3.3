@@ -13,10 +13,11 @@ public class BankAccount {
     }
 
     public double withDraw(double sum) throws LimitException {
-        if (sum > amount) {
-            throw new LimitException("Запрашиваемая сумма меньше остатка. Остаток = ", amount);
+        if (sum  > amount) {
+            throw new LimitException("Недостаточно средств: ", amount);
         }
         amount = amount - sum;
+        System.out.println("Сумма, которую вы сняли = " +  sum );
         return amount;
     }
 }
